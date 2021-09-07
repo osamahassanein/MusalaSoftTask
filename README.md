@@ -7,7 +7,7 @@ To install this example application, run the following commands:
 
 ```bash
 git clone https://github.com/osamahassanein/MusalaSoftTask.git
-cd spring-boot-angular-example
+cd MusalaSoftTask
 ```
 
 This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions below.
@@ -15,11 +15,18 @@ This will get a copy of the project installed locally. To install all of its dep
 To run the server, cd into the `server` folder and run:
  
 ```bash
-./mvnw spring-boot:run
+mvnw spring-boot:run
 ```
 
-To run the client, cd into the `client` folder and run:
+To run the client, cd into the `MusalaAppFront` folder and run:
  
 ```bash
 npm install && npm start
+```
+
+
+To start the dev server run:
+ 
+```bash
+ng serve
 ```
