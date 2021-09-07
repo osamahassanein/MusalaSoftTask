@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
 
-## Run
+## Change directory
 
 cd to MusalaAppFront `cd D:\path\to\MusalaAppFront>`.
 
