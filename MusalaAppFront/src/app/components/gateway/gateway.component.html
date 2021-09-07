@@ -1,0 +1,26 @@
+<h3>
+    Gateways
+    <button style="float: right" class="btn btn-primary" (click)="openGatewayModal(newGateway)"><i class="fa fa-plus"></i></button>
+  </h3>
+
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">IPV4</th>
+            <th scope="col">Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let gateway of gateways">
+            <td>{{ gateway.id }}</td>
+            <td><a routerLink="{{ gateway.id }}">{{ gateway.name }}</a></td>
+            <td>{{ gateway.ipv4 }}</td>
+            <td>
+                <button class="btn btn-primary" (click)="openGatewayModal(gateway)"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-danger" (click)="removeGateway(gateway)"><i class="fa fa-remove"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

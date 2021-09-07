@@ -1,0 +1,60 @@
+<div class="modal-header">
+    <h4 class="modal-title">Edit Device</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form *ngIf="xBoolean" #deviceForm="ngForm">
+
+      <div class="form-group">
+        <label for="deviceVendor">Device Vendor</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="device.vendor"
+          #deviceVendorField="ngModel"
+          name="deviceVendor"
+          minlength="2"
+          [ngClass]="{ 'is-invalid': deviceVendorField.errors && deviceVendorField.touched }"
+          required
+        />
+        <div [hidden]="!deviceVendorField.errors?.required" class="invalid-feedback">Device Vendor name required</div>
+        <div [hidden]="!deviceVendorField.errors?.minlength" class="invalid-feedback">Must be more than 2 charecters.</div>
+      </div>
+      <div class="form-group">
+        <label for="deviceStatus">Device Status</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="device.status" name="deviceStatus" required>
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+          </select>
+        <!-- <input type="text" class="form-control" [(ngModel)]="device.status" name="deviceStatus" required /> -->
+      </div>
+      <div class="form-group">
+        <button
+          *ngIf="!isEdit"
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!deviceForm.form.valid"
+          (click)="addDevice()"
+        >
+          Add
+        </button>
+  
+        <button
+          *ngIf="isEdit"
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!deviceForm.form.valid"
+          (click)="updateDevice(device)"
+        >
+          Update
+        </button>
+      </div>
+  
+  
+    </form>
+    <!-- <p><button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button></p> -->
+  </div>
+  <div class="modal-footer"><button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button></div>
+  

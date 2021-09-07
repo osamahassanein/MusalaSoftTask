@@ -1,0 +1,31 @@
+<h3>
+    Devices
+    <button style="float: right" class="btn btn-primary" (click)="openDeviceModal(newDevice)"><i
+            class="fa fa-plus"></i></button>
+</h3>
+
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Vendor</th>
+            <th scope="col">Creation Date</th>
+            <th scope="col">Status</th>
+            <!-- <th scope="col">Gateway ID</th> -->
+            <th scope="col">Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let device of devices">
+            <td>{{ device.id }}</td>
+            <td>{{ device.vendor }}</td>
+            <td>{{ device.creationDate }}</td>
+            <td>{{ device.status }}</td>
+            <!-- <td>{{ device.gateway.id }}</td> -->
+            <td>
+                <button class="btn btn-primary" (click)="openDeviceModal(device)"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-danger" (click)="removeDevice(device)"><i class="fa fa-remove"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
