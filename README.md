@@ -12,7 +12,7 @@ cd MusalaSoftTask
 
 This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions below.
 
-To run the server, cd into the `server` folder and run:
+To run the server, cd into the `MusalaSoftTask` folder and run:
  
 ```bash
 mvnw spring-boot:run
