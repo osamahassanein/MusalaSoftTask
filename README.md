@@ -18,6 +18,12 @@ To run the server, cd into the `MusalaSoftTask` folder and run:
 mvnw spring-boot:run
 ```
 
+To run the tests, cd into the `MusalaSoftTask` folder and run:
+ 
+```bash
+mvnw clean test
+```
+
 To run the client, cd into the `MusalaAppFront` folder and run:
  
 ```bash
