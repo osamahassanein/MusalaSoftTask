@@ -20,8 +20,8 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 
-		<junit.jupiter.version>5.5.2</junit.jupiter.version>
-		<junit.platform.version>1.5.2</junit.platform.version>
+		<!-- <junit.jupiter.version>5.5.2</junit.jupiter.version> -->
+		<!-- <junit.platform.version>1.5.2</junit.platform.version> -->
 	</properties>
 	<dependencies>
 		<dependency>
@@ -53,7 +53,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-
 			<!-- exclude junit 4 -->
 
 			<exclusions>
@@ -62,6 +61,7 @@
 					<artifactId>junit</artifactId>
 				</exclusion>
 			</exclusions>
+
 		</dependency>
 		<dependency>
 			<groupId>commons-validator</groupId>
@@ -72,13 +72,15 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
-			<version>${junit.jupiter.version}</version>
+			<!--<version>${junit.jupiter.version}</version> -->
+			<version>5.6.2</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<version>${junit.jupiter.version}</version>
+			<!-- <version>${junit.jupiter.version}</version> -->
+			<version>5.6.2</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -86,14 +88,14 @@
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-runner</artifactId>
-			<version>${junit.platform.version}</version>
+			<!-- <version>${junit.platform.version}</version> -->
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher -->
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-launcher</artifactId>
-			<version>${junit.platform.version}</version>
+			<!-- <version>${junit.platform.version}</version> -->
 			<scope>test</scope>
 		</dependency>
 
@@ -103,6 +105,8 @@
 			<artifactId>mockito-junit-jupiter</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -121,11 +125,14 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.2</version>
+				<configuration>
+					<includes>
+						<include>GatewayControllerTest.java</include>
+					</includes>
+				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>2.22.2</version>
 			</plugin>
 		</plugins>
 	</build>
